@@ -18,3 +18,7 @@ module.exports = weatherData
 //git config --global user.email "bturtulla@gmail.com"
 //git init
 //git add -A
+//git status
+//git commit -m "something..."
+//e marrim nga git hub ate pjesen "git remote add origin..."
+//git push origin master
