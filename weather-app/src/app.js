@@ -75,21 +75,36 @@ app.get("/about", (request, respond) => {
 })
 
 
-// app.get("/weather", (request, respond) => {
-//     if (!request.query.address) {
-//         return respond.send({
-//             error: "You must provide an address!"
-//         })
-//     }
-//     console.log(request.query.address)
-//     respond.send({
-//         forecast: "it's sunny today",
-//         location: " Prizren ",
-//         address: request.query.address
+app.get("/weather", (request, respond) => {
+    if (!request.query.address) {
+        return respond.send({
+            error: "You must provide an address!"
+        })
+    }
+    // console.log(request.query.address)
+    // respond.send({
+    //     forecast: "it's sunny today",
+    //     location: " Prizren ",
+    //     address: request.query.address
 
-//     })
-// })
+    // })
+})
 
+
+
+weatherData(address, (error, { temperature, description, cityName } = {}) => {
+    if (error) {
+        return res.send({
+            error
+        })
+    }
+    console.log(temperature, description, cityName);
+    res.send({
+        temperature,
+        description,
+        cityName
+    })
+})
 
 
 
